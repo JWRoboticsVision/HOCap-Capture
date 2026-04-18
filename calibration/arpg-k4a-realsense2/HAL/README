@@ -1,0 +1,31 @@
+HAL is a Hardware Abstraction Layer library that provides a simple unified
+interface to common functionality.  Contains devices and associated device
+drivers like cameras, IMUs, GPS, etc.
+
+Feel free to report any bugs or issues at our GitHub portal. You can find us at:
+http://github.com/arpg/
+
+Active Developers:
+* Sina Aghli
+* Michael Kasper
+* Andrew Kramer
+* John Stechschulte
+* Gabe Sibley
+* Christoffer Heckman
+
+Previous Developers (thank you!):
+* Juan M. Falquez
+* Nima Keivan
+* Steven Lovegrove
+* Fernando Nobre
+
+Dependencies
+* opencv
+* google protobuf
+* google glog
+* google gflags
+* tinyxml2
+* Sophus
+* Calibu
+
+sudo apt-get install libprotobuf-dev libopencv-dev libgoogle-glog-dev libtinyxml2-dev protobuf-compiler

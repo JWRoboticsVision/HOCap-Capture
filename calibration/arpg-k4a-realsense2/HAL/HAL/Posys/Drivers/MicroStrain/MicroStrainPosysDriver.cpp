@@ -1,0 +1,24 @@
+#include "MicroStrainPosysDriver.h"
+
+#include <HAL/IMU/Drivers/MicroStrain/MicroStrainDriver.h>
+
+using namespace hal;
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+MicroStrainPosysDriver::MicroStrainPosysDriver()
+{
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+MicroStrainPosysDriver::~MicroStrainPosysDriver()
+{
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+void MicroStrainPosysDriver::RegisterPosysDataCallback(PosysDriverDataCallback callback)
+{
+  MicroStrainDriver::RegisterPosysDataCallback(callback);
+}
+
+

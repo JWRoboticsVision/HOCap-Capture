@@ -1,0 +1,17 @@
+Source: cvars
+Priority: optional
+Maintainer: Gabe Sibley <gabe.sibley@gmail.com>
+Build-Depends: debhelper (>= 9), cmake
+Standards-Version: 3.9.5
+Section: libs
+Homepage: http://github.com/arpg/cvars
+
+Package: libcvars
+Section: libdevel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libtinyxml, libglew
+Description: Console-based run-time tweaking of C++ variables.
+ Within CVars, GLConsole is an example that allows OpenGL developers to easily
+ add a 'Quake-style' debugging console to their applications.  GLConsole relies
+ on CVars.
+
