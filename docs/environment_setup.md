@@ -9,6 +9,7 @@
     - [3. Environment setup](#3-environment-setup)
 - [Install Intel® RealSense™ SDK (v2.50.0)](#install-intel-realsense-sdk-v2500)
     - [Build from Sources](#build-from-sources)
+    - [Method 2: Install from Debian Package](#method-2-install-from-debian-package)
 - [Install ROS Wrapper for Intel® RealSense™ Devices (v2.3.2)](#install-ros-wrapper-for-intel-realsense-devices-v232)
     - [Method 1: Install from Source](#method-1-install-from-source)
 - [Install Azure Kinect \& Body Tracking SDK](#install-azure-kinect--body-tracking-sdk)
@@ -154,6 +155,38 @@ sudo apt update && sudo apt install ros-noetic-desktop-full
   sudo make install
   ```
 
+#### Method 2: Install from Debian Package
+
+- Register the server's public key
+
+  ```sh
+  # Ensure the directory exists
+  sudo mkdir -p /etc/apt/keyrings
+  # Download and dearmor
+  curl -sSf https://librealsense.realsenseai.com/Debian/librealsenseai.asc | \
+  gpg --dearmor | sudo tee /etc/apt/keyrings/librealsenseai.gpg > /dev/null
+  ```
+
+- Add the server to the list of repositories
+
+  ```sh
+  echo "deb [signed-by=/etc/apt/keyrings/librealsenseai.gpg] https://librealsense.realsenseai.com/Debian/apt-repo `lsb_release -cs` main" | \
+  sudo tee /etc/apt/sources.list.d/librealsense.list
+  sudo apt-get update
+  ```
+
+- Install the libraries
+
+  ```sh
+  # Install the libraries
+  sudo apt-get install librealsense2-dkms
+  sudo apt-get install librealsense2-utils
+
+  # Install the developer and debug packages
+  sudo apt-get install librealsense2-dev
+  sudo apt-get install librealsense2-dbg
+  ```
+
 ## Install [ROS Wrapper for Intel® RealSense™ Devices (v2.3.2)](https://github.com/realsenseai/realsense-ros/tree/2.3.2)
 
 There are two methods to install the realsense-ros (debian package or build from source).
@@ -258,16 +291,18 @@ Becauce the debian package is almost behind the one available in RealSense™ of
 - Currently, **the only supported distribution** is `Ubuntu 18.04`. However, we could use them on `Ubuntu 20.04`.
 - The Body Tracking SDK recommands a NVIDIA GPU installed on host machine.
 - Tested versions on Ubuntu 20.04
-  - [k4a-tools 1.4.1](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/k/k4a-tools/)
-  - [libk4a1.4](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4/)
-  - [libk4a1.4-dev](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4-dev/)
-  - [libk4abt1.1](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4abt1.1/)
-  - [libk4abt1.1-dev](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4abt1.1-dev/)
-  - [CUDA v11.8.0](https://developer.nvidia.com/cuda-11-8-0-download-archive)
+- [k4a-tools 1.4.1](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/k/k4a-tools/)
+- [libk4a1.4](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4/)
+- [libk4a1.4-dev](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4a1.4-dev/)
+- [libk4abt1.1](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4abt1.1/)
+- [libk4abt1.1-dev](https://packages.microsoft.com/ubuntu/18.04/prod/pool/main/libk/libk4abt1.1-dev/)
+- [CUDA v11.8.0](https://developer.nvidia.com/cuda-11-8-0-download-archive)
 - Install required packages
-  ```sh
-  sudo apt update && sudo apt install libsoundio1 ros-noetic-ddynamic-reconfigure
-  ```
+
+```sh
+sudo apt update && sudo apt install libsoundio1 ros-noetic-ddynamic-reconfigure
+```
+
 - Download k4a packages
 
   ```sh

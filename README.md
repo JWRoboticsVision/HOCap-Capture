@@ -3,7 +3,8 @@
 <h2>Table of Contents</h2>
 
 - [Hardware Studio Setup](#hardware-studio-setup)
-- [Environment Setup](#environment-setup)
+- [System Environment Setup](#system-environment-setup)
+- [Python Environment Setup](#python-environment-setup)
 - [Camera Calibration](#camera-calibration)
 - [References](#references)
 
@@ -13,9 +14,15 @@ Please refer to the [Hardware Studio Setup](./docs/hardware_studio_setup.md) doc
 
 ---
 
-## Environment Setup
+## System Environment Setup
 
 Please refer to the [Environment Setup](./docs/environment_setup.md) document for details on how to set up the software environment for data capture.
+
+---
+
+## Python Environment Setup
+
+Please refer to the [Python Environment Setup](./docs/python_environment_setup.md) document for details on how to set up the Python environment for data capture.
 
 ---
 
